@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oil Paintings - The Nook Taipei</title>
+    <title>Copyright - The Nook</title>
     <style>
         * {
             margin: 10;
@@ -31,12 +31,9 @@
     }
 
     nav {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 3rem;
+        max-width: 100%;
+        padding: 0 1rem; /* Reduce padding on mobile */
+        flex-wrap: wrap; /* Allow wrapping */
     }
 
     .logo {
@@ -44,7 +41,7 @@
         font-weight: 300;
         letter-spacing: 3px;
         text-decoration: none;
-        color: white;
+        color: #f5dca5;
     }
 
     .logo-main {
@@ -53,19 +50,37 @@
 
     .nav-links {
         display: flex;
-        gap: 2rem;
-        list-style: none;
-        align-items: center;
+        gap: 0.8rem; /* Smaller gap on mobile */
+        flex-wrap: wrap
+        
     }
 
     .nav-links a {
+        font-size: 0.75rem; /* Smaller text on mobile */
+        padding: 0.3rem 0.5rem;
         color: white;
         text-decoration: none;
         transition: opacity 0.3s;
-        font-size: 0.95rem;
-        letter-spacing: 1px;
-        font-weight: 300;
+        
     }
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+nav {
+padding: 0 3rem;
+}
+
+
+.nav-links {
+   gap: 2rem;
+}
+
+.nav-links a {
+   font-size: 0.95rem;
+}
+
+
+
 
     .nav-links a:hover {
         opacity: 0.6;
@@ -74,11 +89,6 @@
     .nav-links a.active {
         border-bottom: 2px solid white;
         padding-bottom: 0.3rem;
-    }
-
-    .cart-link {
-        position: relative;
-        font-weight: 500 !important;
     }
 
     .cart-count {
@@ -281,23 +291,10 @@
     <header>
         <nav>
             <a href="index.html" class="logo"><span class="logo-main">
-<img src="nook_logo_3.jpg"></a>
-            <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-<li><a href="julie_biography.html">ARTIST BIO</a></li>
-                <li><a href="oil-paintings.html">OIL/FLORAL</a></li>
-                <li><a href="landscape-paintings.html">OIL/LANDSCAPE</a></li>
-                <li><a href="watercolor-paintings.html">WATERCOLORS</a></li>
-<li><a href="shipping.html" class="active">SHIPPING</a></li>
-<li><a href="copyright.html">COPYRIGHT</a></li>
-                <li><a href="cart.html" class="cart-link">
-                    CART
-                    <span class="cart-count" id="cartCount">0</span>
-                </a></li>
-            </ul>
+<img src="nook_logo.jpg">Art Gallery</a>
+            
         </nav>
     </header>
-
 
 
         <h2>SHIPPING & DELIVERY</h2>
@@ -376,10 +373,10 @@ exchange. Original shipping costs are non-refundable.</p>
 <h3>Contact Us</h3>
 
 <h3>Have questions about shipping or your order?</h3>
-<p>Email: info@thenooktaipei.com Phone: +858 260 9595 Hours: Tuesday - Sunday, 11:00 AM - 7:00 PM (California, USA Time)
+<p>Email: info@thenook.com Phone:+1234567890  Hours: Tuesday - Sunday, 11:00 AM - 7:00 PM (California, USA Time)
 We typically respond to all inquiries within 24 hours.</p>
 
-<p>Last Updated: October 2025</p>
+<p>Last Updated: January 2026</p>
 
 <h3>SHIPPING INFORMATION</h3>
 
@@ -387,78 +384,6 @@ We typically respond to all inquiries within 24 hours.</p>
 <p>📦 Carefully packaged and insured</p>
 <p>📍 Ships within 3-5 business days</p>
 <p>🌍 International shipping available</p>
-
-
-
-<!-- Notification popup -->
-<div class="notification" id="notification"></div>
-
-<script>
-    // Shared cart management system
-    // This code should be the same across all your painting pages
-
-    // Get cart from localStorage
-    function getCart() {
-        return JSON.parse(localStorage.getItem('shoppingCart') || '[]');
-    }
-
-    // Save cart to localStorage
-    function saveCart(cart) {
-        localStorage.setItem('shoppingCart', JSON.stringify(cart));
-        updateCartCount();
-    }
-
-    // Update cart count badge
-    function updateCartCount() {
-        const cart = getCart();
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        document.getElementById('cartCount').textContent = totalItems;
-       
-        // Hide badge if cart is empty
-        const badge = document.getElementById('cartCount');
-        badge.style.display = totalItems > 0 ? 'flex' : 'none';
-    }
-
-    // Add item to cart
-    function addToCart(title, artist, price, details) {
-        let cart = getCart();
-       
-        // Check if item already exists
-        const existingItem = cart.find(item => item.title === title);
-       
-        if (existingItem) {
-            existingItem.quantity += 1;
-            showNotification(`Updated quantity for "${title}"`);
-        } else {
-            cart.push({
-                title: title,
-                artist: artist,
-                price: price,
-                details: details,
-                quantity: 1,
-                type: 'Oil Painting' // You can change this for different pages
-            });
-            showNotification(`"${title}" added to cart!`);
-        }
-       
-        saveCart(cart);
-    }
-
-    // Show notification
-    function showNotification(message) {
-        const notification = document.getElementById('notification');
-        notification.textContent = message;
-        notification.classList.add('show');
-       
-        setTimeout(() => {
-            notification.classList.remove('show');
-        }, 3000);
-    }
-
-    // Initialize cart count on page load
-    updateCartCount();
-</script>
-
 
 </body>
 </html>

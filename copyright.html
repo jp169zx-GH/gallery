@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Oil Paintings - The Nook Taipei</title>
+    <title>Copyright - The Nook</title>
     <style>
         * {
             margin: 10;
@@ -31,12 +31,9 @@
     }
 
     nav {
-        max-width: 1400px;
-        margin: 0 auto;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        padding: 0 3rem;
+        max-width: 100%;
+        padding: 0 1rem; /* Reduce padding on mobile */
+        flex-wrap: wrap; /* Allow wrapping */
     }
 
     .logo {
@@ -44,7 +41,7 @@
         font-weight: 300;
         letter-spacing: 3px;
         text-decoration: none;
-        color: white;
+        color: #f5dca5;
     }
 
     .logo-main {
@@ -53,19 +50,37 @@
 
     .nav-links {
         display: flex;
-        gap: 2rem;
-        list-style: none;
-        align-items: center;
+        gap: 0.8rem; /* Smaller gap on mobile */
+        flex-wrap: wrap
+        
     }
 
     .nav-links a {
+        font-size: 0.75rem; /* Smaller text on mobile */
+        padding: 0.3rem 0.5rem;
         color: white;
         text-decoration: none;
         transition: opacity 0.3s;
-        font-size: 0.95rem;
-        letter-spacing: 1px;
-        font-weight: 300;
+        
     }
+
+/* Desktop styles */
+@media (min-width: 1024px) {
+nav {
+padding: 0 3rem;
+}
+
+
+.nav-links {
+   gap: 2rem;
+}
+
+.nav-links a {
+   font-size: 0.95rem;
+}
+
+
+
 
     .nav-links a:hover {
         opacity: 0.6;
@@ -75,7 +90,10 @@
         border-bottom: 2px solid white;
         padding-bottom: 0.3rem;
     }
-
+    .cart-link {
+        position: relative;
+        font-weight: 500 !important;
+    }
     .cart-link {
         position: relative;
         font-weight: 500 !important;
@@ -281,20 +299,8 @@
     <header>
         <nav>
             <a href="index.html" class="logo"><span class="logo-main">
-<img src="nook_logo_3.jpg"></a>
-            <ul class="nav-links">
-                <li><a href="index.html">HOME</a></li>
-<li><a href="julie_biography.html">ARTIST BIO</a></li>
-                <li><a href="oil-paintings.html">OIL/FLORAL</a></li>
-                <li><a href="landscape-paintings.html">OIL/LANDSCAPE</a></li>
-                <li><a href="watercolor-paintings.html">WATERCOLORS</a></li>
-<li><a href="shipping.html">SHIPPING</a></li>
-<li><a href="copyright.html"  class="active">COPYRIGHT</a></li>
-                <li><a href="cart.html" class="cart-link">
-                    CART
-                    <span class="cart-count" id="cartCount">0</span>
-                </a></li>
-            </ul>
+<img src="nook_logo.jpg">Art Gallery</a>
+            
         </nav>
     </header>
 
@@ -322,13 +328,13 @@ create derivative works, or distribute images of this artwork without express wr
 
 <h3>TERMS & CONDITIONS</h3>
 
-<p>*Last Updated: October 2025*</p>
+<p>*Last Updated: January 2026*</p>
 
 <p>Copyright & Intellectual Property Rights</p>
 
 <p>Original Artwork Copyright</p>
 
-<p>All artwork displayed and sold through The Nook Taipei website is original work created by Li Chen Ma and is 
+<p>All artwork displayed and sold through The Nook website is original work created by Li Chen Ma and is 
 protected under international copyright law.</p>
 
 <h3>**Copyright Ownership:**</h3>
@@ -452,7 +458,7 @@ for detailed information regarding:</h3>
 <li>Copyright remains with the artist</li>
 <li>Commissions are non-refundable once work has begun</li>
 
-<p>Contact us at info@thenooktaipei.com to discuss commission inquiries.</p>
+<p>Contact us at info@thenook.com to discuss commission inquiries.</p>
 
 
 
@@ -487,15 +493,15 @@ for detailed information regarding:</h3>
 
 <p>Any disputes arising from purchases will be resolved through:</p>
 
-<p>1. Direct communication with The Nook Taipei</p>
+<p>1. Direct communication with The Nook</p>
 <p>2. Mediation if necessary</p>
 <p>3. Governed by the laws of US</p>
 
 <h3>Contact Information</h3>
 
-<h3>**The Nook Taipei**</h3>
-<p>Email: info@thenooktaipei.com</p>
-<p>Phone: +858 260 9595</p>
+<h3>**The Nook **</h3>
+<p>Email: info@thenook.com</p>
+<p>Phone: +1234567890</p>
 <p>Hours: Tuesday - Sunday, 11:00 AM - 7:00 PM (Pacific Standard Time)</p>
 
 <p>For copyright licensing inquiries or commission requests, 
@@ -509,7 +515,7 @@ Changes will be effective immediately upon posting to this website.
 Continued use of the website constitutes acceptance of updated terms.</p>
 
 
-<p>*By purchasing artwork from The Nook Taipei, you acknowledge that you have read, 
+<p>*By purchasing artwork from The Nook, you acknowledge that you have read, 
 understood, and agree to these Terms & Conditions.*</p>
 
 
@@ -522,12 +528,12 @@ All copyright and reproduction rights remain the exclusive property of the artis
 
 
 <footer>
-<p>The Nook Taipei</p>
-<p>Email: info@thenooktaipei.com</p>
-<p>Phone: +858 260 9595</p>
+<p>The Nook</p>
+<p>Email: info@thenook.com</p>
+<p>Phone: +1234567890</p>
 
 
-<p>&copy;2025 Li Chen Ma / The Nook Taipei. All rights reserved.</p>
+<p>&copy;2026 Li Chen Ma / The Nook. All rights reserved.</p>
 <p>All artwork and images are protected by copyright.</p>
 
 <p>Unauthorized reproduction or use of artwork is prohibited.</p>
@@ -535,71 +541,6 @@ All copyright and reproduction rights remain the exclusive property of the artis
 <!-- Notification popup -->
 <div class="notification" id="notification"></div>
 
-<script>
-    // Shared cart management system
-    // This code should be the same across all your painting pages
-
-    // Get cart from localStorage
-    function getCart() {
-        return JSON.parse(localStorage.getItem('shoppingCart') || '[]');
-    }
-
-    // Save cart to localStorage
-    function saveCart(cart) {
-        localStorage.setItem('shoppingCart', JSON.stringify(cart));
-        updateCartCount();
-    }
-
-    // Update cart count badge
-    function updateCartCount() {
-        const cart = getCart();
-        const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
-        document.getElementById('cartCount').textContent = totalItems;
-       
-        // Hide badge if cart is empty
-        const badge = document.getElementById('cartCount');
-        badge.style.display = totalItems > 0 ? 'flex' : 'none';
-    }
-
-    // Add item to cart
-    function addToCart(title, artist, price, details) {
-        let cart = getCart();
-       
-        // Check if item already exists
-        const existingItem = cart.find(item => item.title === title);
-       
-        if (existingItem) {
-            existingItem.quantity += 1;
-            showNotification(`Updated quantity for "${title}"`);
-        } else {
-            cart.push({
-                title: title,
-                artist: artist,
-                price: price,
-                details: details,
-                quantity: 1,
-                type: 'Oil Painting' // You can change this for different pages
-            });
-            showNotification(`"${title}" added to cart!`);
-        }
-       
-        saveCart(cart);
-    }
-
-    // Show notification
-    function showNotification(message) {
-        const notification = document.getElementById('notification');
-        notification.textContent = message;
-        notification.classList.add('show');
-       
-        setTimeout(() => {
-            notification.classList.remove('show');
-        }, 3000);
-    }
-
-    // Initialize cart count on page load
-    updateCartCount();
-</script>
 
 
 </body>
