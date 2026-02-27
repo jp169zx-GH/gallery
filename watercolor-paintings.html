@@ -190,29 +190,24 @@ color: #f5dca5;
         margin: 0 auto
     }
 
-    .product-badge {
-        position: absolute;
-        top: 1rem;
-        right: 1rem;
-        background: rgba(26, 26, 26, 0.9);
-        color: white;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.75rem;
-        letter-spacing: 1px;
-    }
+  
+.product-badge {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: rgba(26, 26, 26, 0.9);
+    color: white;
+    padding: 0.4rem 0.8rem;
+    font-size: 0.75rem;
+    letter-spacing: 1px;
+    z-index: 10;
+}
 
 @media (max-width: 768px) {
-    .product-info {
-        text-align: center;
+    .product-image-container {
+        height: 250px;
     }
-   
-    .product-info h3,
-    .product-artist,
-    .product-details,
-    .product-price,
-    .product-copyright {
-        text-align: center;
-    }
+}
 
     .product-info {
         padding: 2rem;
