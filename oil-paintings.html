@@ -156,7 +156,8 @@ color: #f5dca5;
         background: white;
         overflow: hidden;
         box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        transition: transform 0.3s;
+        width:100%;
+        margin:0 auto;
     }
 
     .product-card:hover {
@@ -164,29 +165,39 @@ color: #f5dca5;
     }
 
     .product-image {
-        width: 339px;
+        width: 100%;
+        max-width: 100%;
         height:426px;
-        background-size: cover;
+        background-size: contain;
         background-position: center;
+        background-repeat: no-repeat;
         position: relative;
+        backgroun-color: #fafafa;
+        margin: 0 auto;
     }
+
 .product-image1 {
-        width: 339px;
+        width: 100%;
+        max-width: 100%;
         height:251px;
-        background-size: cover;
+        background-size: contain;
         background-position: center;
+        background-repeat: no-repeat;
         position: relative;
+        background-color: #fafafa;
+        margin: 0 auto;
     }
 
     .product-badge {
         position: absolute;
-        top: 1rem;
-        right: 1rem;
-        background: rgba(26, 26, 26, 0.9);
-        color: white;
-        padding: 0.4rem 0.8rem;
-        font-size: 0.75rem;
-        letter-spacing: 1px;
+         top: 10px;
+         right: 27px;
+         background: rgba(26, 26, 26, 0.9);
+         color: white;
+         padding: 0.4rem 0.8rem;
+         font-size: 0.75rem;
+         letter-spacing: 1px;
+         z-index: 10;
     }
 
     .product-info {
@@ -484,7 +495,7 @@ color: #f5dca5;
             <div class="product-info">
                 <h3>Bird Of Paradise</h3>
                 <p class="product-artist">by Li Chen Ma</p>
-                <p class="product-details">Oil on Canvas • 20" × 16" x 0.6" • 2016</p>
+                <p class="product-details">Oil on Canvas • 16" × 12" x 0.6" • 2016</p>
                 <p class="product-price">$350</p>
                 <p class="product-copyright">© Li Chen Ma. All rights reserved.</p>
                 <button class="add-to-cart-btn" onclick="addToCart('Bird Of Paradise', 'Li Chen Ma', 350, 'Oil on Canvas, 16\' × 12\'')">
